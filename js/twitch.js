@@ -13,9 +13,9 @@ $(document).ready(function() {
         return function(data) {
           var tag_add = "";
           if (is_on) {
-            tag_add = "<div class='items' style='background: #E5E4D7'><img src='";
+            tag_add = "<div class='items' id='online' style='background: #E5E4D7'><img src='";
           } else {
-            tag_add = "<div class='items'><img src='";
+            tag_add = "<div class='items' id='offline'><img src='";
           }
           if (data.logo != null) {
             tag_add += data.logo;
@@ -23,10 +23,13 @@ $(document).ready(function() {
             tag_add += "http://www.hotnewsweekly.com/sites/default/files/News/25_1135.jpg";
           }
           if (is_on) {
-            tag_add += "' class='display_pics'/>" + data.display_name + "<div class='user_status'>" + data.status + "</div></div>";
+            if (data.status.length > 40) {
+              data.status = data.status.substr(0,40) + "...";
+            }
+            tag_add += "' class='display_pics'/><a href='" + data._links.self + "'>" + data.display_name + "</a><div class='user_status'>" + data.status + "</div></div>";
             $("#container").prepend(tag_add);
           } else {
-            tag_add += "' class='display_pics'/>" + data.display_name + "<div class='user_status'>Offline</div></div>";
+            tag_add += "' class='display_pics'/><a href='" + data._links.self + "'>" + data.display_name + "</a><div class='user_status'>Offline</div></div>";
             $("#container").append(tag_add);
           }
         };
@@ -35,3 +38,7 @@ $(document).ready(function() {
     });
   });
 });
+
+function toggle(button) {
+  console.log(button);
+}

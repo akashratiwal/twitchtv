@@ -19,8 +19,22 @@ html {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 10px;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   padding: 15px 20px 15px 20px;
+}
+
+#navigation {
+  line-height: 60px;
+  height: 60px;
+  color: #E5E4D7;
+  display: block;
+  font-size: 30px;
+  font-weight: bolder;
+  background: #92CD00;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 0px;
+  padding: 0;
 }
 
 #footer {
@@ -40,7 +54,7 @@ html {
   background: #FFCF79;
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   padding: 15px 20px 15px 20px;
 }
 
@@ -56,12 +70,14 @@ html {
 }
 
 .user_status {
+  display: inline;
   vertical-align: middle;
-  display: inline-block;
   float: right;
-  font-weight:
+  font-weight: normal;
   font-size: 12px;
   width: 60%;
+  height: 34px;
+  line-height: 34px;
   text-align: center;
 }
 
@@ -69,4 +85,37 @@ html {
   float: left;
   width: 30%;
   text-align: center;
+}
+
+a, a:visited, a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.uselect {
+  font-size: 15px;
+  display: inline-block;
+  width: 33%;
+  height: 60px;
+  text-align: center;
+}
+
+.uselect:hover {
+  cursor: hand;
+  color: #444;
+  background-color: white;
+}
+
+.uselect1 {
+  float: left;
+}
+
+.uselect3 {
+  float: right;
+}
+
+svg {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
 }
