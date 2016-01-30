@@ -37,6 +37,7 @@ $(document).ready(function() {
       $.getJSON(json._links.channel, handle(is_online));
     });
   });
+  $("#navigation:nth-child(0)").attr("id", "active_head");
 });
 
 function toggle(button) {
