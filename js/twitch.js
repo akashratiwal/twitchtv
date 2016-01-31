@@ -37,9 +37,23 @@ $(document).ready(function() {
       $.getJSON(json._links.channel, handle(is_online));
     });
   });
-  $("#navigation:nth-child(0)").attr("id", "active_head");
+  $("#navigation :nth-child(1)").append("<div id='arrow'></div>");
 });
 
 function toggle(button) {
-  console.log(button);
+  $(".uselect #arrow").remove();
+  if (button == 1) {
+      $("#navigation :nth-child(1)").append("<div id='arrow' style='border-bottom: 10px solid yellow;'></div>");
+      $("#container *").show();
+  }
+  if (button == 2) {
+    $("#navigation :nth-child(2)").append("<div id='arrow' style='border-bottom: 10px solid #E5E4D7;'></div>");
+    $("#container #offline").hide();
+    $("#container #online").show();
+  }
+  if (button == 3) {
+    $("#navigation :nth-child(3)").append("<div id='arrow' style='border-bottom: 10px solid #FFCF79;'></div>");
+    $("#container #offline").show();
+    $("#container #online").hide();
+  }
 }
